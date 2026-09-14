@@ -42,10 +42,17 @@ export class SecurityWebSocket {
 
       this.ws.onmessage = (messageEvent) => {
         try {
-          const data = JSON.parse(messageEvent.data);
-          // Check if it looks like a SecurityEvent
-          if (data && data.event_id && data.action) {
-            this.handleIncomingEvent(data as SecurityEvent);
+          const parsed = JSON.parse(messageEvent.data);
+          // Backend sends: { type: "security_event", data: { event_id, action, ... }, sequence }
+          let eventPayload = null;
+          if (parsed && parsed.type === 'security_event' && parsed.data && parsed.data.event_id && parsed.data.action) {
+            eventPayload = parsed.data;
+          } else if (parsed && parsed.event_id && parsed.action) {
+            // Fallback: flat event format (direct SecurityEvent)
+            eventPayload = parsed;
+          }
+          if (eventPayload) {
+            this.handleIncomingEvent(eventPayload as SecurityEvent);
           }
         } catch (e) {
           console.error("Invalid WebSocket message format:", e);

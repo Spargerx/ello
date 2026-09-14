@@ -39,8 +39,8 @@ export const Header: React.FC<HeaderProps> = ({ wsStatus }) => {
       
       <div className="header-right">
         {/* Protection Status */}
-        <StatusBadge status={protectionMode === 'ACTIVE' ? 'active' : (protectionMode === 'MONITOR' ? 'warning' : 'inactive')}>
-          PROTECTION {protectionMode === 'ACTIVE' ? 'ACTIVE' : (protectionMode === 'MONITOR' ? 'DETECTION ONLY' : protectionMode)}
+        <StatusBadge status={protectionMode === 'ACTIVE' ? 'active' : (protectionMode === 'DETECTION_ONLY' ? 'warning' : 'inactive')}>
+          PROTECTION {protectionMode === 'ACTIVE' ? 'ENFORCING' : (protectionMode === 'DETECTION_ONLY' ? 'DETECTION ONLY' : protectionMode)}
         </StatusBadge>
 
         <div className="header-divider"></div>

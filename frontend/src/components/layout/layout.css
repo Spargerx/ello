@@ -39,7 +39,7 @@
 
 .brand-ello {
   font-size: var(--font-size-xl);
-  font-weight: var(--font-bold);
+  font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.5px;
 }
@@ -47,7 +47,7 @@
 .sidebar-subtitle {
   padding: var(--space-md) var(--space-lg) var(--space-xs);
   font-size: 10px;
-  font-weight: var(--font-bold);
+  font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -68,7 +68,7 @@
   border-radius: var(--radius-md);
   color: var(--text-secondary);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-medium);
+  font-weight: 500;
   transition: all 0.2s;
 }
 

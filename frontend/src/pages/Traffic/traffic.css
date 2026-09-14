@@ -8,10 +8,10 @@
   display: flex;
   gap: 16px;
   margin-bottom: 24px;
-  background: var(--bg-card);
+  background: var(--bg-surface);
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-default);
   align-items: center;
   flex-wrap: wrap;
 }
@@ -32,7 +32,7 @@
 .filter-group select,
 .filter-group input {
   background: var(--color-surface);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-default);
   color: var(--text-primary);
   padding: 8px 12px;
   border-radius: 4px;
@@ -48,9 +48,9 @@
 
 .traffic-table-container {
   flex-grow: 1;
-  background: var(--bg-card);
+  background: var(--bg-surface);
   border-radius: 8px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-default);
   overflow: auto;
 }
 
@@ -75,7 +75,7 @@
 
 .traffic-table td {
   padding: 12px 16px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-default);
   font-size: 14px;
   color: var(--text-secondary);
 }
@@ -129,8 +129,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  border-top: 1px solid var(--border);
-  background: var(--bg-card);
+  border-top: 1px solid var(--border-default);
+  background: var(--bg-surface);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
@@ -143,7 +143,7 @@
 
 .pagination-btn {
   background: var(--color-surface);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-default);
   color: var(--text-primary);
   padding: 6px 12px;
   border-radius: 4px;
@@ -152,7 +152,7 @@
 }
 
 .pagination-btn:hover:not(:disabled) {
-  background: var(--border);
+  background: var(--border-default);
 }
 
 .pagination-btn:disabled {

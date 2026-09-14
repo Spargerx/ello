@@ -2,7 +2,7 @@ import type { Action, ThreatType, Severity } from "./api";
 
 export interface DecisionTraceStep {
   step: string;
-  status: "PASS" | "FAIL" | "DETECT" | "ERROR";
+  status: "PASS" | "FAIL" | "DETECT" | "ERROR" | "SKIP" | "BLOCK" | "ALLOW";
   detail: string;
 }
 

@@ -203,7 +203,7 @@ export const Policies: React.FC = () => {
           <div className="step-arrow"><ArrowDown size={16} /></div>
           <div className="step-box">Policy Decision</div>
           <div className="step-arrow"><ArrowDown size={16} /></div>
-          <div className="step-box" style={{ background: 'var(--bg-card)', borderColor: 'var(--accent-primary)' }}>
+          <div className="step-box" style={{ background: 'var(--bg-surface)', borderColor: 'var(--accent-primary)' }}>
             ALLOW / BLOCK / DETECT
           </div>
         </div>

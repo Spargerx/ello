@@ -79,7 +79,7 @@ export const Dashboard: React.FC = () => {
             newStats.blocked_requests += 1;
           }
           
-          if (event.threat_type) {
+          if (event.threat_type && event.threat_type !== 'ACCESS_GRANTED') {
             newStats.threat_count += 1;
           }
 

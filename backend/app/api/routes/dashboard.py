@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy import select, func, text, desc
 from sqlalchemy.ext.asyncio import AsyncSession
 from typing import Any
+from datetime import datetime, timedelta, timezone
 
 from app.db.database import get_db
 from app.models.security_event import SecurityEvent
@@ -73,7 +74,19 @@ async def get_dashboard(db: AsyncSession = Depends(get_db)):
         ORDER BY minute ASC
     """)
     timeline_result = await db.execute(timeline_query)
-    timeline = [{"time": row[0].isoformat(), "count": row[1]} for row in timeline_result.fetchall()]
+    raw_counts = {row[0]: row[1] for row in timeline_result.fetchall()}
+    
+    now_min = datetime.now(timezone.utc).replace(second=0, microsecond=0)
+    counts_by_ts = {
+        (k.timestamp() if k.tzinfo else k.replace(tzinfo=timezone.utc).timestamp()): v 
+        for k, v in raw_counts.items()
+    }
+    
+    timeline = []
+    for i in range(60, -1, -1):
+        dt = now_min - timedelta(minutes=i)
+        c = counts_by_ts.get(dt.timestamp(), 0)
+        timeline.append({"time": dt.isoformat(), "count": c})
 
     # Threat Distribution
     dist_query = text("""

@@ -8,6 +8,7 @@ export type ThreatType =
   | "SQL_INJECTION"
   | "COMMAND_INJECTION"
   | "ACCESS_GRANTED"
+  | "AUTH_FAILURE"
   | "OTHER";
 
 export type Severity = "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";

@@ -12,8 +12,8 @@
 }
 
 .policy-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
   border-radius: 8px;
   padding: 24px;
   display: flex;
@@ -71,8 +71,8 @@
 }
 
 .policy-config {
-  background: var(--bg-dark);
-  border: 1px solid var(--border);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
   border-radius: 6px;
   padding: 12px;
   font-family: monospace;
@@ -83,7 +83,7 @@
 .policy-action {
   margin-top: 20px;
   padding-top: 16px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border-default);
   display: flex;
   justify-content: flex-end;
 }
@@ -108,8 +108,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
   border-left: 4px solid var(--accent-primary);
   padding: 20px 24px;
   border-radius: 8px;
@@ -160,8 +160,8 @@
 }
 
 .pipeline-viz {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
   border-radius: 8px;
   padding: 24px;
   margin-top: 24px;
@@ -187,8 +187,8 @@
 }
 
 .step-box {
-  background: var(--bg-dark);
-  border: 1px solid var(--border);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
   padding: 10px 16px;
   border-radius: 6px;
   font-size: 13px;
