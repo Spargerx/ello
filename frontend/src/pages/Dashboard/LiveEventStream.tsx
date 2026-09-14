@@ -47,13 +47,13 @@ export const LiveEventStream: React.FC<LiveEventStreamProps> = ({ events, onEven
             {events.map((evt) => (
               <tr 
                 key={evt.event_id} 
-                className={`event-row ${evt.action === 'BLOCK' ? 'blocked-row' : ''}`}
+                className={`event-row ${evt.action === 'BLOCK' ? 'blocked-row' : ''} ${evt.action === 'ALLOW' ? 'allow-row' : ''}`}
                 onClick={() => onEventClick(evt)}
               >
                 <td className="cell-time">{formatTime(evt.timestamp)}</td>
                 <td>
                   {evt.threat_type ? (
-                    <span className="threat-label">{evt.threat_type}</span>
+                    <span className={`threat-label ${evt.threat_type === 'ACCESS_GRANTED' ? 'threat-granted' : ''}`}>{evt.threat_type}</span>
                   ) : (
                     <span className="muted">-</span>
                   )}

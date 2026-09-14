@@ -123,7 +123,7 @@ export const ThreatAnalytics: React.FC = () => {
                   <YAxis stroke="var(--text-muted)" fontSize={12} tickLine={false} axisLine={false} />
                   <Tooltip 
                     cursor={{ fill: 'rgba(255,255,255,0.05)' }}
-                    contentStyle={{ background: 'var(--bg-dark)', border: '1px solid var(--border)', borderRadius: '4px' }}
+                    contentStyle={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: '4px', color: 'var(--color-text)' }}
                   />
                   <Bar dataKey="count" radius={[4, 4, 0, 0]}>
                     {threats.map((entry, index) => (
@@ -159,7 +159,7 @@ export const ThreatAnalytics: React.FC = () => {
                     ))}
                   </Pie>
                   <Tooltip 
-                    contentStyle={{ background: 'var(--bg-dark)', border: '1px solid var(--border)', borderRadius: '4px' }}
+                    contentStyle={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: '4px', color: 'var(--color-text)' }}
                   />
                 </PieChart>
               </ResponsiveContainer>
@@ -181,7 +181,7 @@ export const ThreatAnalytics: React.FC = () => {
                   <YAxis type="category" dataKey="path" stroke="var(--text-muted)" fontSize={12} tickLine={false} axisLine={false} width={150} />
                   <Tooltip 
                     cursor={{ fill: 'rgba(255,255,255,0.05)' }}
-                    contentStyle={{ background: 'var(--bg-dark)', border: '1px solid var(--border)', borderRadius: '4px' }}
+                    contentStyle={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: '4px', color: 'var(--color-text)' }}
                   />
                   <Bar dataKey="threats" fill="#8fbcbb" radius={[0, 4, 4, 0]} />
                 </BarChart>
@@ -204,7 +204,7 @@ export const ThreatAnalytics: React.FC = () => {
                   <YAxis type="category" dataKey="user_id" stroke="var(--text-muted)" fontSize={12} tickLine={false} axisLine={false} width={100} />
                   <Tooltip 
                     cursor={{ fill: 'rgba(255,255,255,0.05)' }}
-                    contentStyle={{ background: 'var(--bg-dark)', border: '1px solid var(--border)', borderRadius: '4px' }}
+                    contentStyle={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: '4px', color: 'var(--color-text)' }}
                   />
                   <Bar dataKey="threats" fill="#b48ead" radius={[0, 4, 4, 0]} />
                 </BarChart>

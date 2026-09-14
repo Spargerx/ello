@@ -15,7 +15,10 @@ export const api = {
   getDashboard: () => fetchJson<DashboardResponse>("/api/dashboard"),
   
   // Events
-  getEvents: (limit: number = 50) => fetchJson<SecurityEvent[]>(`/api/events?limit=${limit}`),
+  getEvents: async (limit: number = 50): Promise<SecurityEvent[]> => {
+    const response = await fetchJson<EventListResponse>(`/api/events?limit=${limit}`);
+    return (response.items as SecurityEvent[]) || [];
+  },
   getEvent: (eventId: string) => fetchJson<SecurityEvent>(`/api/events/${eventId}`),
   
   // Simulator

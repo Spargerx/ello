@@ -62,7 +62,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, onClo
             <div className="detail-group">
               <label>Threat Type</label>
               <div className="detail-value">
-                {event.threat_type ? <span className="threat-label">{event.threat_type}</span> : '-'}
+                {event.threat_type ? <span className={`threat-label ${event.threat_type === 'ACCESS_GRANTED' ? 'threat-granted' : ''}`}>{event.threat_type}</span> : '-'}
               </div>
             </div>
             

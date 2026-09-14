@@ -7,7 +7,7 @@ from app.services.websocket_manager import ws_manager
 router = APIRouter()
 
 
-@router.websocket("/ws")
+@router.websocket("/ws/security-events")
 async def websocket_endpoint(websocket: WebSocket):
     await ws_manager.connect(websocket)
     try:

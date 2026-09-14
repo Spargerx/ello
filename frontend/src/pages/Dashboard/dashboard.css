@@ -19,7 +19,7 @@
 /* Stat Cards */
 .stat-cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: var(--spacing-md);
 }
 
@@ -191,6 +191,14 @@
   background-color: rgba(239, 68, 68, 0.1);
 }
 
+.event-row.allow-row {
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+.event-row.allow-row:hover {
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
 .cell-time {
   color: var(--color-text-secondary);
   font-family: var(--font-mono);
@@ -212,6 +220,10 @@
   color: var(--color-danger);
   font-weight: 600;
   font-size: var(--font-size-xs);
+}
+
+.threat-label.threat-granted {
+  color: var(--color-success);
 }
 
 .muted {
